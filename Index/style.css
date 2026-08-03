@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #1a1a1a;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+}
+
+h1#hover {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    margin-bottom: 8px;
+}
+
+#demo p,
+#custSection p {
+    font-size: 1.05rem;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+button {
+    font-size: 1rem;
+    padding: 10px 16px;
+    margin: 6px 6px 6px 0;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e2e2e2;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#custID {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #888;
+    border-radius: 4px;
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.message {
+    font-weight: bold;
+    min-height: 1.2em;
+}
+
+.message.success {
+    color: #1a7a1a;
+}
+
+.message.error {
+    color: #b00020;
+}
+
+.coupon {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #b8860b;
+    letter-spacing: 1px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 480px) {
+    .container {
+        padding: 16px 14px 40px;
+    }
+
+    button {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    .btn-row {
+        flex-direction: column;
+    }
+
+    #custID {
+        max-width: 100%;
+    }
+}
