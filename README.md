@@ -44,13 +44,3 @@ A responsive web app for XYZ Bank's Diwali coupon promo. Users register, enter a
 | Framework-agnostic foundation | Easy to later migrate into React/Vue/Angular or integrate into an existing bank portal |
 | Wide browser compatibility | Vanilla JS + standard CSS3 features work across all modern browsers without polyfills |
 | Easy backend integration path | The `fetch()` API can be dropped into `app.js` later to replace the hardcoded array with a real REST API call |
-
-### Suggested Technologies for Production Upgrade
-
-| Current (Demo) | Recommended for Production |
-|---|---|
-| Hardcoded `knownCustomers` array | REST API / backend database (Node.js, Java Spring, .NET, etc.) |
-| Client-side only validation | Server-side validation + HTTPS + authentication tokens (JWT/OAuth) |
-| Random coupon generation in-browser | Server-generated, database-stored coupon codes tied to customer accounts |
-| No storage | Database (MySQL/PostgreSQL/MongoDB) to persist coupon issuance records |
-| No security layer | Input sanitization, CSRF protection, rate limiting on validation attempts |
