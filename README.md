@@ -45,3 +45,5 @@ ASSIGNMENT 1
 | Framework-agnostic foundation | Easy to later migrate into React/Vue/Angular or integrate into an existing bank portal |
 | Wide browser compatibility | Vanilla JS + standard CSS3 features work across all modern browsers without polyfills |
 | Easy backend integration path | The `fetch()` API can be dropped into `app.js` later to replace the hardcoded array with a real REST API call |
+# ASSIGNMENT 2
+#
