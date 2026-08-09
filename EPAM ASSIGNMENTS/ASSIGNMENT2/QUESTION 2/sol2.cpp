@@ -1,54 +1,36 @@
-#include<iostream>
-#include<vector>
-#include<queue>
-#include<algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-void bfs(int st,vector<vector<int>>&adj,vector<int>&vis,int d){
-      queue<int>q;
-      q.push(st);
-      int cnt=0;
-      while(!q.empty()){
-        if(cnt==d) break;
-        cnt++;
-        int size=q.size();
-        for(int k=0;k<size;k++){
-            int i=q.front();
-            q.pop();
-            vis[i]=1;
-            for(int j=0;j<adj[i].size();j++){
-                   if(!vis[adj[i][j]]){
-                    q.push(adj[i][j]);
-                    vis[adj[i][j]]=1;
-                   }
-            }
-        }
-      }
+
+int bfs(vector<vector<int>>& adj, int& d) {
+    int count = 0, level = 0;
+    deque<int> deque;
+    vector<bool> inserted(adj.size(), false);
+    deque.push_back(1);
+    inserted[1] = true;
+    
+    while(!deque.empty()) {
+        if(level > d) break;
+        int size = deque.size();
+        count += size;
+        for(int i=0; i<size; i++) {
+            int temp = deque.front(); deque.pop_front();
+            for(int& ngb : adj[temp])
+                if(!inserted[ngb]) {
+                    deque.push_back(ngb);
+                    inserted[ngb] = true;
+                }
+        } level++;
+    } return count;
 }
-int main(){
-    int n;
-    cout<<"Enter n=";
-    cin>>n;
-    int m;
-    cout<<"Enter m=";
-    cin>>m;
-    int d;
-    cout<<"Enter d=";
-    cin>>d;
-    int a,b;
-    int ans=0;
-    vector<vector<int>>adj(n+1);
-    cout<<"Enter edges:";
-    vector<int>vis(n+1,0);
-    for(int i=0;i<m;i++){
-        cin>>a>>b;
-        if(a!=b){
-        adj[a].push_back(b);
-        adj[b].push_back(a);
-        }
+
+int main() {
+    int n, m, d; cin>>n>>m>>d;
+    vector<vector<int>> adj(n+1);
+    for(int i=1; i<=m; i++) {
+        int src, dst; cin>>src>>dst;
+        adj[src].push_back(dst);
+        adj[dst].push_back(src);
     }
-    bfs(1,adj,vis,d);
-    for(int i=1;i<=n;i++){
-           if(vis[i]==1) ans++;
-    }
-    cout<<"output="<<ans;
+    cout << bfs(adj, d) << endl;
+    return 0;
 }
