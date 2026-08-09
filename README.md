@@ -207,10 +207,4 @@ Path Aggregation (XOR)                     |    Yes    |    No
 Shortest Path (Unweighted Graph)           |    No     |    Yes
 Threshold-based Counting                   |    Yes    |    Yes
 
-
-IMPLEMENTATION NOTES
-
-1. Use consistent node numbering (both problems are 1-indexed, starting at Server/City 1).
-2. For Problem 1, prefer iterative DFS or increase recursion limits for large N (up to 10^5) to avoid stack overflow in languages like Python.
-3. For Problem 2, use a queue-based BFS for optimal O(N + M) performance; avoid Floyd-Warshall or Dijkstra since the graph is unweighted.
-4. Both problems can be solved in a single traversal pass, making them suitable for large constraints (N up to 10^5, M up to 2×10^5).
+ 
